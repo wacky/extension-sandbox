@@ -1,0 +1,44 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "__MSG_application_title__",
+  "description": "__MSG_application_description__",
+  "default_locale": "ja",
+  "version": "0.0.0",
+  "browser_action": {
+    "default_icon": "data/images/icon_32.png",
+    "default_title": "__MSG_application_title__",
+    "default_popup": "data/templates/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "data/css/default.css"
+      ],
+      "js": [
+        "js/background/content_script.js"
+      ]
+    }
+  ],
+  "icons": {
+    "32": "data/images/icon_32.png",
+    "64": "data/images/icon_64.png",
+    "128": "data/images/icon_128.png"
+  },
+  "web_accessible_resources": [
+    "js/frontend/popup.js"
+  ],
+  "background": {
+    "scripts": [
+      "js/background/handler.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
